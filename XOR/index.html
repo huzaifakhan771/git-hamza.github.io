@@ -1,16 +1,17 @@
+<html>
 <head><script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.0"> </script>
 <script>
          function loadModel(){ 
               model = await tf.loadModel('web_model/model.json') 
-              y = model.predict(tf.zeros([1,2])) 
-              document.getElementById('out').innerHTML = y.dataSync()[0]
+              var y = model.predict(tf.zeros([1,2])) 
+//               document.getElementById('out').innerHTML = y.dataSync()[0]
               document.getElementById("myText").innerHTML = y;
           } 
-          loadModel()
 </script>
 </head> 
-<body>
-        <h1 id ='out'></h1>
-          "hehe"
-          <h1>"The value for number is: " <span id="myText"></span></h1>
+<body onload="loadModel()">
+<!--          <h1 id ='out'></h1> -->
+<!--           "hehe" -->
+          <h1>"The value for y is: " <span id="myText"></span></h1>
 </body>
+</html>
