@@ -3,12 +3,12 @@
           async function loadModel(){ 
               model = await tf.loadModel('web_model/model.json') 
               y = model.predict(tf.zeros([1,2])) 
-              document.getElementById('out').innerHTML = y.dataSync()[0]
+              document.getElementById('out').innerHTML = y.dataSync()[0] 
           } 
           loadModel() 
 </script>
 </head> 
 <body>
-        <p id ='out'></p> 
-          "He"
+        <p id ='out'></p>
+          "hehe"
 </body>
