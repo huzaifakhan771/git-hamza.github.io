@@ -1,21 +1,14 @@
-<html>
 <head><script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.0"> </script>
 <script>
-         var loadModel =function(){ 
-              model = await tf.loadModel('web_model/model.json')
-              a = 21
-              y = model.predict(tf.zeros([1,2]))
-              console.log(y)
-//               document.getElementById('out').innerHTML = y.dataSync()[0]
-              document.getElementById("myText").innerHTML = y;
-              document.getElementById("de").innerHTML = a
+          async function loadModel(){ 
+              model = await tf.loadModel('web_model/model.json') 
+              y = model.predict(tf.zeros([1,2])) 
+              document.getElementById('out').innerHTML = y.dataSync()[0] 
           } 
+          loadModel() 
 </script>
 </head> 
-<body onload="loadModel()">
-<!--          <h1 id ='out'></h1> -->
-          "hae"
-          <h1>"The value for y is: " <span id="myText"></span></h1>
-          <h1>"The value for a is: " <span id="de"></span></h1>
+<body>
+         "test"
+        <p id ='out'></p> 
 </body>
-</html>
