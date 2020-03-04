@@ -2,10 +2,12 @@
 <head><script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.0"> </script>
 <script>
          function loadModel(){ 
-              model = await tf.loadModel('web_model/model.json') 
+              model = await tf.loadModel('web_model/model.json')
+              a = 21
               y = model.predict(tf.zeros([1,2])) 
 //               document.getElementById('out').innerHTML = y.dataSync()[0]
               document.getElementById("myText").innerHTML = y;
+              document.getElementById("de").innerHTML = a
           } 
 </script>
 </head> 
@@ -13,5 +15,6 @@
 <!--          <h1 id ='out'></h1> -->
           "hehe"
           <h1>"The value for y is: " <span id="myText"></span></h1>
+          <h1>"The value for a is: " <span id="de"></span></h1>
 </body>
 </html>
