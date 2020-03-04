@@ -3,12 +3,15 @@
           async function loadModel(){ 
               model = await tf.loadModel('web_model/model.json') 
               y = model.predict(tf.zeros([1,2])) 
-              document.getElementById('out').innerHTML = y.dataSync()[0] 
+              document.getElementById('out').innerHTML = y.dataSync()[0]
+              document.getElementById("myText").innerHTML = y;
           } 
-          loadModel() 
+          loadModel()
 </script>
 </head> 
 <body>
         <p id ='out'></p>
           "hehe"
+          onload="myFunction()">  
+          <h1>"The value for number is: " <span id="myText"></span></h1>
 </body>
