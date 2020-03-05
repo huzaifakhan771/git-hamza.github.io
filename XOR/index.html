@@ -5,7 +5,7 @@
     function loadModel() {
       model = await tf.loadMoel('web_model/model.json')
       y = model.predict(tf.zeros([1,2]))
-      document.getElementById("out").innerHTML = y;
+      document.getElementById("out").innerHTML = y.dataSync()[0];
     }
   </script>
 </head>
@@ -13,6 +13,7 @@
 <body onload="loadModel">
   
   <h1>"The value for number is: " <span id="y"></span></h1>
+  <h2>"NO"</h2>
 
 </body>
 
