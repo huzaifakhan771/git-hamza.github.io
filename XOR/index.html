@@ -1,20 +1,17 @@
 <html>
 
 <head><script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.0"> </script>
-  <script>
-    function loadModel() {
-      model = await tf.loadMoel('web_model/model.json')
-      y = model.predict(tf.zeros([1,2]))
-      document.getElementById("out").innerHTML = y.dataSync()[0];
-    }
-  </script>
-</head>
-
-<body onload="loadModel">
-  
-  <h1>"The value for number is: " <span id="y"></span></h1>
-  <h2>"NO"</h2>
-
+<script>
+          async function loadModel(){ 
+              model = await tf.loadModel('web_model/model.json') 
+              y = model.predict(tf.zeros([1,2])) 
+              document.getElementById('out').innerHTML = y.dataSync()[0] 
+          } 
+          loadModel() 
+</script>
+</head> 
+<body>
+        <p id ='out'></p> 
 </body>
 
 </html>
